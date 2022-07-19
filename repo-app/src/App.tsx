@@ -1,12 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Main from "./components/main";
+import MainContainer from "./components/routes";
+import { BrowserRouter } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-     <Main/>
+      <BrowserRouter><MainContainer/></BrowserRouter>
+      
     </div>
   );
 }

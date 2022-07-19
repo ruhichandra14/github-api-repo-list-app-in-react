@@ -26,6 +26,7 @@ code {
   align-items: flex-start;
   flex-wrap: wrap;
   width: 80%;
+  height: 4000px; /* testing intersection observer -- todo remove  */
 }
 
 .repo-list-item{
@@ -47,4 +48,17 @@ code {
 
 .repo-name, .repo-about{
   text-overflow: ellipsis;
+}
+
+.search-results-heading{
+  margin: 20px 0;
+}
+
+.about{
+  text-align: left;
+}
+
+.repo-contents{
+  margin: 20px 0 0;
+  white-space: pre-wrap;
 }

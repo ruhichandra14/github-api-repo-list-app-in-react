@@ -5,7 +5,7 @@ export type LazyImgProps = {
 };
 
 export type SearchProps = {
-  inputVal: string
+  inputVal: string;
   onInputChangeHandler: (e: any) => void;
   searchAPIRespTime: number;
 }

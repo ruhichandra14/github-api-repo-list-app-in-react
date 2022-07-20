@@ -14,10 +14,7 @@ const RepoList = ({ repoList, isLoading }: RepoListProps) => {
     const imageObserver = createObserver(onContentInView);
     // @ts-ignore
     setImageObserver(imageObserver);
-
-    return () => {
-      imageObserver.disconnect();
-    };
+    return () => imageObserver.disconnect();
   }, []);
 
   if (isLoading) {

@@ -5,7 +5,10 @@ import { FetchCallProps } from "../typedef/typedef";
     searchQuery
  }: FetchCallProps) => {
     let urlWithQuery = `${url}${searchQuery}`;
-    const response = await fetch(urlWithQuery);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 5000); // cancel if request times out
+    const response = await fetch(urlWithQuery, {signal: controller.signal });
     const jsonData = await response.json();
+    clearTimeout(timer);
     return jsonData;
   };

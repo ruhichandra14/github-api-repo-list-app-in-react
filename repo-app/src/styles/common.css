@@ -1,0 +1,11 @@
+
+.avatar-image {
+    display: block;
+    width: 200px;
+    padding: 10px;
+}
+
+.info {
+    font-size: 12px;
+    color: #778899;
+}

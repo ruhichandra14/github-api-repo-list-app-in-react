@@ -1,0 +1,62 @@
+.repo-card-attr {
+  margin-top: 20px;
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.repo-card .avatar-image {
+  width: 150px;
+}
+
+.repo-card-attr-name {
+  margin-left: 8px;
+  margin-right: 8px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.about {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details-link:hover {
+  color: #743434;
+}
+
+article.repo-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f8ff;
+}
+
+article.repo-details-container img {
+  margin-top: 36px;
+}
+
+.repo-contents {
+  margin: 20px 0 0 10px;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+
+.repo-card-attr,
+.repo-contents-attr {
+  margin-top: 20px;
+  margin-left: 36px;
+}
+
+.article.repo-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

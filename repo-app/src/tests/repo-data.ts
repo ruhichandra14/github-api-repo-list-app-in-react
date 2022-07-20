@@ -1,4 +1,4 @@
-[
+export const repoData = [
     {
         "id": 58028038,
         "node_id": "MDEwOlJlcG9zaXRvcnk1ODAyODAzOA==",

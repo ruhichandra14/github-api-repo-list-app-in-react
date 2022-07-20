@@ -1,15 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import MainContainer from "./components/routes";
-import { BrowserRouter } from 'react-router-dom';
-
+import "./App.css";
+import MainContainer from "./components/main";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter><MainContainer/></BrowserRouter>
-      
+      <BrowserRouter>
+        <MainContainer />
+      </BrowserRouter>
     </div>
   );
 }

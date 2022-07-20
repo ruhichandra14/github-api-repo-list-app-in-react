@@ -1,0 +1,25 @@
+
+
+header.main-header {
+    text-align: center;
+    background-color: black;
+    font-size: 46px;
+    padding: 20px 0;
+    color: #faebd7;
+    margin-bottom: 50px;
+    width: 100%;
+    font-family: monospace;
+}
+
+.main-container{
+    width: 80%
+}
+
+.main-content section{
+    margin-top: 80px;
+}
+
+.search-results-heading {
+    margin: 20px 0;
+  }
+  

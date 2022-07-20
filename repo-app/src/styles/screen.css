@@ -1,0 +1,48 @@
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #808486;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  margin-top: 50px;
+}
+
+.sprite {
+  width: 800px;
+  height: 600px;
+  background: url('../assets/error-screens-sprites.png');
+}
+
+.error-screen1 {
+  background-position: -10px -10px;
+}
+
+.error-screen2 {
+  background-position: -830px -10px;
+}
+
+.error-screen3 {
+  background-position: -10px -630px;
+}

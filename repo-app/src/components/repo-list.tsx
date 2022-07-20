@@ -1,77 +1,69 @@
-import { useEffect, useRef, useState } from "react";
-import LazyImage from "./lazy-img";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import LazyImage from "./common/lazy-img";
+import { Link } from "react-router-dom";
+import Loading from "./common/loading";
+import RepoItem from "./repo-item";
+import { createObserver, onContentInView } from "../helpers/observer";
+import { RepoListProps } from "../typedef/typedef";
+import { CLICK_FIND_MORE } from "../constants/constants";
 
-function createObserver(inViewCallback: any, newOptions = {}) {
-    const defaultOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.3,
-    }
-    return new IntersectionObserver(inViewCallback, Object.assign(defaultOptions, newOptions));
+const RepoList = ({ repoList, isLoading }: RepoListProps) => {
+  const [imageObserver, setImageObserver] = useState(null);
+
+  useEffect(() => {
+    const imageObserver = createObserver(onContentInView);
+    // @ts-ignore
+    setImageObserver(imageObserver);
+
+    return () => {
+      imageObserver.disconnect();
+    };
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
   }
+  const repos = repoList.items;
 
-function onImageInView(entries: any, observer: any) {
-    entries.forEach((entry: any) => {
-      if (entry.isIntersecting) {
-        const element = entry.target;
-        const imageSrc = element.getAttribute('data-src');
-        
-        element.removeAttribute('data-src');
-        element.setAttribute('src', imageSrc);
-        
-        observer.unobserve(element);
-      } 
-    });
-  }
-
-  
-const RepoList = ({
-    repoData
-}: any) => {
-    const containerRef = useRef(null);
-    const [imageObserver, setImageObserver] = useState(null);
-  
-    useEffect(() => {
-      const imageObserver = createObserver(onImageInView); 
-      // @ts-ignore
-      setImageObserver(imageObserver);
-      
-      return () => {
-        imageObserver.disconnect();
-      }
-    }, []);
-
-    const repoList = repoData.items;
-    if(!repoList?.length){
-        return <div>No repos found!</div>
-    }
-
-    //console.log("repoList-------- ", repoList, showImage);
-    return (
-        <>
-        <section>
-           
+  return (
+    <>
+      <section>
         <ul className="repo-list-container">
-     
-            {repoList?.map((repo: any) => 
-                <li className="repo-list-item" key={repo.id}>
-               <Link to={{pathname: `/repoDetails/${repo?.id}`}} state={{repo: repo}}> 
-                <div className="repo-card">
-                       {<LazyImage key={repo?.id} observer={imageObserver} src={repo?.owner.avatar_url}  alt="avatar"/>}
-                        <div className="repo-details">
-                            <div className="repo-name">Repo: {repo?.name}</div>
-                            <div className="repo-about">About: {repo?.description}</div>
-                        </div>
-                </div>
+          {repos?.map((repo: any) => {
+            const { id, name, full_name, owner, description } = repo || {};
+            return (
+              <li className="repo-list-item" key={id}>
+                <Link
+                  to={{ pathname: `/repoDetails/${id}` }}
+                  state={{ repo: repo }}
+                  className="details-link"
+                >
+                  <div className="repo-card">
+                    {
+                      <LazyImage
+                        key={id}
+                        observer={imageObserver}
+                        src={owner.avatar_url}
+                        alt="avatar"
+                      />
+                    }
+                    <div className="repo-details">
+                      <RepoItem name="Repo" value={name} />
+                      <RepoItem name="About" value={full_name} />
+                      <RepoItem
+                        name="More Details"
+                        value={description || CLICK_FIND_MORE}
+                      />
+                    </div>
+                  </div>
                 </Link>
-                </li>
-            )}
+              </li>
+            );
+          })}
         </ul>
-        <p ref={containerRef}> ** list ends **  </p>
-        </section>
-        </>
-    );
-}
-  
+      </section>
+    </>
+  );
+};
+
 export default RepoList;

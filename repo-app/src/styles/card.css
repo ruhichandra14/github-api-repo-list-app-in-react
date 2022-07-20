@@ -8,7 +8,7 @@
   align-items: flex-start;
 }
 
-.repo-card .avatar-image {
+.img-wrapper {
   width: 150px;
 }
 
@@ -36,6 +36,7 @@ article.repo-details-container {
   justify-content: center;
   align-items: center;
   background-color: #f0f8ff;
+  padding: 20px;
 }
 
 article.repo-details-container img {
@@ -46,6 +47,8 @@ article.repo-details-container img {
   margin: 20px 0 0 10px;
   white-space: pre-wrap;
   font-family: monospace;
+  max-width: 80%;
+  text-overflow: ellipsis;
 }
 
 .repo-card-attr,

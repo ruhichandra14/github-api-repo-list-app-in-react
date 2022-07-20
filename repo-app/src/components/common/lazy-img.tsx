@@ -17,7 +17,7 @@ const LazyImage = ({ observer, src, alt }: LazyImgProps) => {
       }
     };
   }, [observer]);
-  return <img ref={elem} data-src={src} alt={alt} className="avatar-image" />;
+  return <div className="img-wrapper"><img ref={elem} data-src={src} alt={alt} className="avatar-image"/></div>
 };
 
 export default LazyImage;

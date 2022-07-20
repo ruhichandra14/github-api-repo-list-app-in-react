@@ -7,7 +7,7 @@ export type LazyImgProps = {
 export type SearchProps = {
   inputVal: string
   onInputChangeHandler: (e: any) => void;
-  searchResults: JSX.Element | null;
+  searchAPIRespTime: number;
 }
 
 export type HeaderProps = {

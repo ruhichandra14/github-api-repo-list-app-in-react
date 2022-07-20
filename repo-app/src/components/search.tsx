@@ -1,11 +1,18 @@
-import { FIND_REPO, SEARCH_REPOS } from "../constants/constants"
+import { FIND_REPO, SEARCH_REPOS, SEARCH_TIME } from "../constants/constants"
 import { SearchProps } from "../typedef/typedef";
 
 const Search =  ({
     inputVal,
     onInputChangeHandler,
-    searchResults
+    searchAPIRespTime
 }: SearchProps) => {
+
+  const searchResults = searchAPIRespTime ? (
+    <div className="search-results-time info">
+      {SEARCH_TIME} {(searchAPIRespTime / 1000).toFixed(2)} s{" "}
+    </div>
+  ) : null;
+
     return (
         <>
         <div className="search-container ">
@@ -13,7 +20,7 @@ const Search =  ({
           <label>{SEARCH_REPOS} </label>
           <input
             value={inputVal}
-            type="text"
+            type="search"
             onChange={(e) => onInputChangeHandler(e)}
             placeholder={FIND_REPO}
           />

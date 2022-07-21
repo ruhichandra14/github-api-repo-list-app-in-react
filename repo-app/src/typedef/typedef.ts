@@ -8,6 +8,7 @@ export type SearchProps = {
   inputVal: string;
   onInputChangeHandler: (e: any) => void;
   searchAPIRespTime: number;
+  showTime: boolean;
 }
 
 export type HeaderProps = {

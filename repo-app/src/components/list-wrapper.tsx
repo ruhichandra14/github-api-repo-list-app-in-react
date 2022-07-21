@@ -7,7 +7,7 @@ import { useSearchResults } from "../hooks/use-search-results";
 
 const SearchReposContainer = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const { isLoading, repoData, searchAPIRespTime } =
+  const { isLoading, repoData, showTime, searchAPIRespTime } =
     useSearchResults(searchQuery);
   const searchHandler = (e: { target: { value: SetStateAction<string> } }) =>
     setSearchQuery(e.target.value);
@@ -20,6 +20,7 @@ const SearchReposContainer = () => {
           inputVal={searchQuery}
           onInputChangeHandler={(e) => searchHandler(e)}
           searchAPIRespTime={searchAPIRespTime}
+          showTime={showTime}
         />
         {repoData && (
           <RepoList

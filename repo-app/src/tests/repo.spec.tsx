@@ -17,6 +17,7 @@ describe("Repo Item", () => {
         inputVal="hello"
         onInputChangeHandler={fn}
         searchAPIRespTime={10}
+        showTime={false}
       />
     );
     const inputEl = screen.getByRole("searchbox");

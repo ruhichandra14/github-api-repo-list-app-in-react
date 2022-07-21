@@ -14,4 +14,4 @@
 
 - Screenshots of the application:
 ```
-https://github.com/ruhichandra14/github-api-repo-list-app-in-react/tree/main/repo-app/public/screenshots```
+https://github.com/ruhichandra14/github-api-repo-list-app-in-react/tree/main/repo-app/public/screenshots

@@ -4,6 +4,7 @@ import RepoDetails from "./repo-details";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "./common/error";
 
+// This components is Main entry component, all routing logic lies here
 const MainContainer = () => {
   const ErrorFallBack = () => <Error />;
   return (

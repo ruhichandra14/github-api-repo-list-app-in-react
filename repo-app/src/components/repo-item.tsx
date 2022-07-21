@@ -1,5 +1,6 @@
 import { RepoItemProps } from "../typedef/typedef";
 
+// This component gives the repo individual attributes 
 const RepoItem = ({ name, value }: RepoItemProps) => {
   return (
     <div className="repo-card-attr">

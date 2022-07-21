@@ -7,6 +7,7 @@ import { createObserver, onContentInView } from "../helpers/observer";
 import { RepoListProps } from "../typedef/typedef";
 import { CLICK_FIND_MORE } from "../constants/constants";
 
+// This component renders the entire repo list 
 const RepoList = ({ repoList, isLoading }: RepoListProps) => {
   const [imageObserver, setImageObserver] = useState(null);
 

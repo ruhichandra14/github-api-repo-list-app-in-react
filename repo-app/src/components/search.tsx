@@ -1,6 +1,7 @@
 import { FIND_REPO, SEARCH_REPOS, SEARCH_TIME } from "../constants/constants"
 import { SearchProps } from "../typedef/typedef";
 
+// This component is for searching of repos
 const Search = ({
   inputVal,
   onInputChangeHandler,

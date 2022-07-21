@@ -8,6 +8,7 @@ import { getLocalTimeZone } from "../helpers/locale-date";
 import { README } from "../constants/constants";
 import { RepoDetailsProps } from "../typedef/typedef";
 
+// This component gives the repo details and is present on :repo/id path
 const RepoDetails = () => {
   const location = useLocation();
   const [repoContents, setRepoContents] = useState<string>("");

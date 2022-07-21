@@ -9,5 +9,5 @@ Steps to run tests:
 1. For unit: npm run test
 2. For e2e: npm run e2e
 
-
-
+Screenshots of the application:
+https://github.com/ruhichandra14/github-api-repo-list-app-in-react/tree/main/repo-app/public/screenshots

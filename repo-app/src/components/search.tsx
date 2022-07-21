@@ -10,7 +10,7 @@ const Search = ({
 
   const searchResults = searchAPIRespTime ? (
     <div className="search-results-time info">
-      {SEARCH_TIME} {(searchAPIRespTime / 1000).toFixed(2)} s{" "}
+      {SEARCH_TIME} {(searchAPIRespTime / 1000).toFixed(2)} ms{" "}
     </div>
   ) : null;
 

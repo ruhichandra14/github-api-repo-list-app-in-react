@@ -16,7 +16,7 @@
 - Screenshots of the application:
 ```
 https://github.com/ruhichandra14/github-api-repo-list-app-in-react/tree/main/repo-app/public/screenshots
-
+```
 
 - How to navigate ?
   1. Entry component is <Main/> within src, [src/components/main.tsx]

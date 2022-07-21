@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { REPO_URL } from "../constants/constants";
 import { getCachedResults } from "../helpers/caching";
 import { fetchCall } from "../helpers/fetchCall";
+import { RepoData } from "../typedef/typedef";
 
 export const useSearchResults = (searchQuery: string) => {
-  const [repoData, setRepoData] = useState([]);
+  const [repoData, setRepoData] = useState<RepoData>()
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [searchAPIRespTime, setSearchAPIRespTime] = useState<number>(0);
 

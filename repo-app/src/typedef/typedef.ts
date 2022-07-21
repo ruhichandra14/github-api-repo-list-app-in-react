@@ -41,6 +41,10 @@ export type FetchCallProps = {
   url: string;
 };
 
+export type RepoDataProp = {
+  repoList: RepoData;
+}
+
 export type RepoListProps = {
   repoList: RepoData;
   isLoading: boolean;
